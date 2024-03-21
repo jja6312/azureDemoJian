@@ -47,6 +47,11 @@ jobs:
         with:
           name: java-app
 
+          # 파일 리스트 출력 단계 추가
+      - name: List files in the artifact directory
+        run: |
+          Get-ChildItem -Recurse
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
