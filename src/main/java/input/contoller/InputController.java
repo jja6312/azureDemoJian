@@ -10,24 +10,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
-@CrossOrigin
+@CrossOrigin(origins = "https://mango-moss-046100b00.5.azurestaticapps.net")
 @RestController
 public class InputController {
     @Autowired
     private InputService inputService;
 
-    @PostMapping(value="/input/save")
-    public void update(@RequestBody InputDTO inputDTO){
+    @PostMapping(value = "/input/save")
+    public void update(@RequestBody InputDTO inputDTO) {
         String input = inputDTO.getValue();
         inputService.save(input);
     }
-    @GetMapping(value="/input/getValue")
-    public List<InputList> getValue(){
+
+    @GetMapping(value = "/input/getValue")
+    public List<InputList> getValue() {
 
         return inputService.getValue();
     }
-
-
 
 }
