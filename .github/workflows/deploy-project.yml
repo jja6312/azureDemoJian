@@ -18,7 +18,7 @@ jobs:
 
       - name: Install and build React project
         run: |
-          cd src/main/webapp # React 프로젝트 경로로 이동
+          cd src/main/webapp
           npm install
           npm run build
 
