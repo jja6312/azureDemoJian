@@ -15,7 +15,7 @@ const Main = () => {
     alert(value);
     console.log(value);
     axios
-      .post("http://azuredemobe.azurewebsites.net:8080/input/save", {
+      .post("https://azuredemobe.azurewebsites.net:8080/input/save", {
         value: value,
       })
       .then((res) => {
@@ -26,7 +26,7 @@ const Main = () => {
 
   useEffect(() => {
     axios
-      .get("http://azuredemobe.azurewebsites.net:8080/input/getValue")
+      .get("https://azuredemobe.azurewebsites.net:8080/input/getValue")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
