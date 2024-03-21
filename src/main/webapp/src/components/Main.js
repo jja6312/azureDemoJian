@@ -54,6 +54,7 @@ const Main = () => {
             );
           })}
       </div>
+      <span>CI/CD로 바뀌고있니?</span>
     </div>
   );
 };
