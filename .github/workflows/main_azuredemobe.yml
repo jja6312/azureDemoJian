@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Gradle
         # Windows 환경에서 Gradle 명령어 실행 방법을 수정
-        run: gradlew build -x test
+        run: ./gradlew build -x test
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
