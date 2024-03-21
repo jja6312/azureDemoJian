@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "https://mango-moss-046100b00.5.azurestaticapps.net")
+@CrossOrigin
 @RestController
 public class InputController {
     @Autowired
