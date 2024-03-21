@@ -59,3 +59,4 @@ jobs:
           app-name: "azureDemoBE"
           slot-name: "Production"
           package: "*.jar"
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
