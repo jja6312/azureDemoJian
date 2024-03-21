@@ -3,7 +3,7 @@ name: Deploy React App to Azure Static Web Apps
 on:
   push:
     branches:
-      - dev # 또는 React 코드 변경을 추적하고 싶은 다른 브랜치
+      - main # 또는 React 코드 변경을 추적하고 싶은 다른 브랜치
 
 jobs:
   build-and-deploy-react:
