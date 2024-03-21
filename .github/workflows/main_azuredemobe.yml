@@ -19,13 +19,13 @@ jobs:
           java-version: "17"
 
       - name: Build with Gradle
-        run: ./gradlew build -x test # -x test 옵션은 테스트를 제외하고 빌드
+        run: ./gradlew build -x test
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: build/libs/*.jar # Gradle의 빌드 아티팩트 경로
+          path: build/libs/*.jar
 
   deploy:
     runs-on: windows-latest
@@ -34,7 +34,7 @@ jobs:
       name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write
 
     steps:
       - name: Download artifact from build job
@@ -48,5 +48,5 @@ jobs:
         with:
           app-name: "azureDemoBE"
           slot-name: "Production"
-          package: java-app/*.jar # 수정된 빌드 아티팩트 경로
+          package: java-app/*.jar
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
