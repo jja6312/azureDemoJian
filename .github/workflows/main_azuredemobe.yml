@@ -53,11 +53,10 @@ jobs:
           Get-ChildItem -Recurse
 
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: "azureDemoBE"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           # 특정 JAR 파일을 지정하기 위해 경로 수정 필요
-          package: java-app/azureDemoJian-0.0.1-SNAPSHOT.jar
+          package: azureDemoJian-0.0.1-SNAPSHOT.jar
