@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 
 const Main = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const inputRef = useRef(null);
   const [value, setValue] = useState("");
   const [data, setData] = useState([]);
@@ -15,7 +17,7 @@ const Main = () => {
     alert(value);
     console.log(value);
     axios
-      .post("https://azuredemobe.azurewebsites.net/input/save", {
+      .post(`${apiUrl}/input/save`, {
         value: value,
       })
       .then((res) => {
@@ -26,7 +28,7 @@ const Main = () => {
 
   useEffect(() => {
     axios
-      .get("https://azuredemobe.azurewebsites.net/input/getValue")
+      .get(`${apiUrl}/input/getValue`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
